@@ -1,0 +1,95 @@
+Script started on 2024-11-21 20:43:26-08:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="94" LINES="51"]
+[?2004h]0;senith@senith-Swift-SF314-54G: ~/Desktop/syst_assi5[01;32msenith@senith-Swift-SF314-54G[00m:[01;34m~/Desktop/syst_assi5[00m$ make
+[?2004l
+gcc -Wall -Wextra -g -c httpd.c -o httpd.o
+gcc -Wall -Wextra -g -o httpd httpd.o
+[?2004h]0;senith@senith-Swift-SF314-54G: ~/Desktop/syst_assi5[01;32msenith@senith-Swift-SF314-54G[00m:[01;34m~/Desktop/syst_assi5[00m$ valgrind ./htp[Ktpd 8000
+[?2004l
+==131545== Memcheck, a memory error detector
+==131545== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==131545== Using Valgrind-3.22.0 and LibVEX; rerun with -h for copyright info
+==131545== Command: ./httpd 8000
+==131545== 
+HTTP server listening on port 8000
+Connection started with 127.0.0.1:51804
+Request recieved: 
+ HEAD /index.html HTTP/1.1
+
+Host: localhost:8000
+
+User-Agent: curl/8.5.0
+
+Accept: */*
+
+
+
+ 
+==131548== 
+==131548== HEAP SUMMARY:
+==131548==     in use at exit: 0 bytes in 0 blocks
+==131548==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==131548== 
+==131548== All heap blocks were freed -- no leaks are possible
+==131548== 
+==131548== For lists of detected and suppressed errors, rerun with: -s
+==131548== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Connection started with 127.0.0.1:37750
+Request recieved: 
+ GET /index.html HTTP/1.1
+
+Host: localhost:8000
+
+User-Agent: curl/8.5.0
+
+Accept: */*
+
+
+
+ 
+==131550== 
+==131550== HEAP SUMMARY:
+==131550==     in use at exit: 0 bytes in 0 blocks
+==131550==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==131550== 
+==131550== All heap blocks were freed -- no leaks are possible
+==131550== 
+==131550== For lists of detected and suppressed errors, rerun with: -s
+==131550== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+Connection started with 127.0.0.1:40464
+Request recieved: 
+ 
+ 
+==131552== 
+==131552== HEAP SUMMARY:
+==131552==     in use at exit: 0 bytes in 0 blocks
+==131552==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==131552== 
+==131552== All heap blocks were freed -- no leaks are possible
+==131552== 
+==131552== For lists of detected and suppressed errors, rerun with: -s
+==131552== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+^C==131545== 
+==131545== Process terminating with default action of signal 2 (SIGINT)
+==131545==    at 0x4999804: accept (accept.c:26)
+==131545==    by 0x1098AB: main (httpd.c:78)
+==131545== 
+==131545== HEAP SUMMARY:
+==131545==     in use at exit: 1,024 bytes in 1 blocks
+==131545==   total heap usage: 1 allocs, 0 frees, 1,024 bytes allocated
+==131545== 
+==131545== LEAK SUMMARY:
+==131545==    definitely lost: 0 bytes in 0 blocks
+==131545==    indirectly lost: 0 bytes in 0 blocks
+==131545==      possibly lost: 0 bytes in 0 blocks
+==131545==    still reachable: 1,024 bytes in 1 blocks
+==131545==         suppressed: 0 bytes in 0 blocks
+==131545== Rerun with --leak-check=full to see details of leaked memory
+==131545== 
+==131545== For lists of detected and suppressed errors, rerun with: -s
+==131545== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+[?2004h]0;senith@senith-Swift-SF314-54G: ~/Desktop/syst_assi5[01;32msenith@senith-Swift-SF314-54G[00m:[01;34m~/Desktop/syst_assi5[00m$ exit
+[?2004l
+exit
+
+Script done on 2024-11-21 20:45:46-08:00 [COMMAND_EXIT_CODE="130"]
